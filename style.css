@@ -32,3 +32,18 @@
     background: radial-gradient(lightgreen 50%, green);
     border: 5px solid black;
 }
+
+.message{
+    position: absolute;
+    z-index: 10;
+    color: black;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
+.messageStyle{
+    background: white;
+}
