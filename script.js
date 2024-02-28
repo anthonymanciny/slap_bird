@@ -23,6 +23,23 @@ document.addEventListener('keydown',(e) => {
         document.querySelectorAll('.pipe_sprite').forEach((e) => {
             e.remove();
         });
+
+        img.style.display = 'block';
+        bird.style.top = '40vh';
+        game_state = 'Play';
+        message.innerHTML = '';
+        score_title.innerHTML = 'Score : ';
+        score_val.innerHTML = '0';
+        message.classList.remove('messageStyle');
+        play();
+    }
+});
+document.addEventListener('touchstart',(e) => {
+    if(e.key == 'Enter'  || e.key == ' ' && game_state!= 'Play'){
+        document.querySelectorAll('.pipe_sprite').forEach((e) => {
+            e.remove();
+        });
+
         img.style.display = 'block';
         bird.style.top = '40vh';
         game_state = 'Play';
@@ -71,6 +88,13 @@ function play(){
         if(game_state != 'Play')return;
         bird_dy = bird_dy + grativy;
         document.addEventListener('keydown',(e) => {
+            if(e.key == 'ArrowUp' || e.key == ' '){
+                img.src = 'images/Bird-2.png';
+                bird_dy = -7.6;
+            }
+            
+        });
+        document.addEventListener('touchstart',(e) => {
             if(e.key == 'ArrowUp' || e.key == ' '){
                 img.src = 'images/Bird-2.png';
                 bird_dy = -7.6;
