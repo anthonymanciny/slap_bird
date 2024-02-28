@@ -71,16 +71,16 @@ function play(){
         if(game_state != 'Play')return;
         bird_dy = bird_dy + grativy;
         document.addEventListener('keypress',(e) => {
-            if(e.key == 'ArrowUp' || e.key == ' '){
+            if(e.key == 'ArrowUp' || e.key === ' '){
                 img.src = 'images/Bird-2.png';
                 bird_dy = -7.6;
             }
             
         });
         document.addEventListener('keyup',(e) => {
-            if(e.key == 'ArrowUp' || e.key == ' '){
+            if(e.key == 'ArrowUp' || e.key === ' '){
                 img.src = 'images/Bird.png';
-    }
+        }
         });
 
         if(bird_props.top <= 0 || bird_props.bottom >= background.bottom){
